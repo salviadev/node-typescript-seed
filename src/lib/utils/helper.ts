@@ -13,7 +13,7 @@ const
                 return item;
         });
     },
-    _cloneObject = (src: any): any => {
+    _cloneObject1 = (src: any): any => {
         if (src === null || src === undefined) return src;
         let res: any = {};
         Object.keys(src).forEach(propertyName => {
@@ -30,28 +30,9 @@ const
         });
         return res;
     },
-    _merge = (src: any, dst: any): void => {
-        if (!src) return;
-        for (let p in src) {
-            let pv = src[p];
-            let ov = dst[p];
-            if (pv === null) continue;
-            if (typeof pv === 'object' && !Array.isArray(pv)) {
-                ov = ov || {};
-                _merge(pv, ov);
-                dst[p] = ov;
-            } else
-                dst[p] = pv;
-        }
-    },
-    _destroyObjects = (obj: any): void => {
-        Object.keys(obj).forEach(pn => {
-            let o = obj[pn];
-            if (o && o.destroy)
-                o.destroy();
-            obj[pn] = null;
-        });
-
+    _cloneObject = (src: any): any => {
+        if (src === null || src === undefined) return src;
+        return Object.assign({}, src);
     },
     _clone = (src: any) => {
         if (!src) return src;
@@ -73,7 +54,5 @@ const
     };
 
 
-export const merge = _merge;
 export const clone = _clone;
-export const destroy = _destroyObjects;
 export const format = _format;
