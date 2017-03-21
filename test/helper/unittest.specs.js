@@ -10,7 +10,7 @@ describe('Unit test skeleton', () => {
         done();
     });
     it('Test 1', (done) => {
-        test().then(function () {
+        test().then(() => {
             done();
         }).catch((ex) => {
             done(ex);
