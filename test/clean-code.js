@@ -1,3 +1,4 @@
+"use strict";
 // Nom de variables
 function nameOfVariables() {
     // DON'T
