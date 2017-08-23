@@ -23,14 +23,7 @@ async function test() {
     assert.equal(end - start < 5, true, ' 2 milliseconds passed (2)');
 }
 describe('Promises', () => {
-    before((done) => {
-        done();
-    });
-    it('Test Delay', (done) => {
-        test().then(() => {
-            done();
-        }).catch((ex) => {
-            done(ex);
-        });
+    it('Test Delay', () => {
+        return test();
     });
 });

@@ -31,16 +31,8 @@ async function test(): Promise<void> {
 
 
 describe('Promises', () => {
-    before((done) => {
-        done();
-    });
-    it('Test Delay', (done) => {
-        test().then(() => {
-            done();
-        }).catch((ex) => {
-            done(ex);
-        })
-
+    it('Test Delay', () => {
+        return test();
     });
 
 });

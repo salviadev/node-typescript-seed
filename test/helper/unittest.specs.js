@@ -6,14 +6,7 @@ async function test() {
     assert.equal(v, 1, 'Always true');
 }
 describe('Unit test skeleton', () => {
-    before((done) => {
-        done();
-    });
-    it('Test 1', (done) => {
-        test().then(() => {
-            done();
-        }).catch((ex) => {
-            done(ex);
-        });
+    it('Test 1', () => {
+        return test();
     });
 });
